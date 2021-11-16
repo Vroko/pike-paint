@@ -1,13 +1,94 @@
 <html>
 <head>
     <title>Pike Paint</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="../../pikepaint/static/css/style.css">
+    
 </head>
 <body>
-    <div align="right">
-    <a href="/">Home</a>
-    |<a href="/files">Gallery</a>
+    <nav id="mainnav" class="navbar bg-2" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item">
+                <h1>Pike Paint App</h1>
+            </a>
+
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/files">Gallery</a>
+            </div>
+        </div>
+    </nav>
+    <div id="grid">
+        <nav id="toolbar-container" class="bg-1">
+            <nav id="categories">
+                <div id="tool-bar" class="content">
+                    <div style="margin-top: 20px;">
+                        <h2>Tools</h2>
+                    </div>
+                    <hr>
+                    <div>
+                        <button onclick="pencil('pencil')" class="button is-primary is-light">Pencil</button>
+                    </div>
+                    <div>
+                        <p class="subtitle is-6">Color Picker</p>
+                    </div>
+                    <div>
+                        <input type="color" id="colorpicker" value="#000000">
+                    </div>
+                    <div>
+                        <p class="subtitle is-6">Thickness</p>
+                        <input id="pencilThickness" class="input" placeholder="Enter a number" style="text-align: center;">
+                    </div>
+                    <hr>
+                    <div>
+                        <button onclick="pencil('eraser')" class="button is-warning is-light">Eraser</button>
+                    </div>
+                    <div>
+                        <p class="subtitle is-6">Thickness</p>
+                        <input id="eraserThickness" class="input" placeholder="Enter a number" style="text-align: center;">
+                    </div>
+                    <hr>
+                    <div>
+                        <button onclick="save()" class="button is-light">Save</button>
+                    </div>
+                </div>
+                
+            </nav>
+        </nav>
+        <div class="container">    
+            <canvas id="paint" width="750" height="450" style="border: 5px solid #000000;">Update your browser to support HTML5 Canvas</canvas>
+        </div>
+        <nav class="bg-1">
+              <nav>
+                  <div>
+
+                  </div>
+              </nav>  
+        </nav>
+        <div id="saveModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+              <header class="modal-card-head">
+                <p class="modal-card-title">Save Canvas?</p>
+                <button class="delete" onclick="toggleModal()" aria-label="close"></button>
+              </header>
+              <section class="modal-card-body">
+                You can save to the gallery so others can see or save to your device for you to keep.
+              </section>
+              <footer class="modal-card-foot">
+                <button class="button" onclick="save()">Save to Gallery</button>
+                <button class="button" onclick="save()">Save to Device</button>
+              </footer>
+            </div>
+          </div>
     </div>
-    <hr>
-    {% block content %}{% endblock %}
+    
+    
+    
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+        
+        <script src="../../pikepaint/static/js/script.js"></script>
 </body>
 </html>
