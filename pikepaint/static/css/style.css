@@ -1,0 +1,43 @@
+body {
+    overflow: hidden; /* Hide scrollbars */
+}
+.container{
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+}
+.card {
+    background-color: #ffffff3b;
+    align-content: center;
+    height: 200px;
+}
+.bg-1{
+    background-color: #fafafa;
+}
+.bg-2{
+    background-color: #f0f0f0;
+}
+#grid{
+    display: grid;
+    grid-template-columns: 11.25rem 1fr 11.25rem;
+    border-top: 2px solid #f5f5f5;
+}
+#categories{
+    align-content: center;
+    text-align: center;
+}
+#toolbar{
+    margin-top: 20px;
+}
+#colorpicker{
+    border-style: none;
+    margin: 5px;
+}
+.subtitle{
+    margin-top: 10px;
+}
+.modal-card-foot{
+    justify-content: center;
+    align-content: center;
+}
